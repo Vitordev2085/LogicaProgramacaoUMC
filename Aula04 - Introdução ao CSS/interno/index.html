@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Interno</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body{
+            background-color: gray;
+        }
+
+        h2{
+            color: brown;
+        }
+
+        li{
+            font-size: larger;
+        }
+        
+        span{
+            font-weight: bold;
+            font-style:italic;
+            color: brown;
+        }
+
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            text-align: justify;
+            line-height: 50px;
+            letter-spacing: 2px;
+        }
+
+        
+        .roboto-<uniquifier> {
+        font-family: "Roboto", serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        font-variation-settings:
+        "wdth" 100;
+        }
+
+
+    </style>
+</head>
+<body style="background-color: lightgray;">
+    <main>
+        <h1 style="color: red;">Importância da Reciclagem</h1>
+        <section>
+            <h2>Por que reciclar?</h2>
+            
+            <p style="font-size: 30px;">Lorem ipsum dolor sit amet, <span>consectetur adipiscing elit</span>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>   
+        </section>    
+        
+        <section>
+            <h2>O que podemos reciclar?</h2>
+            
+            <ul>
+                <li>Papel</li>
+                <li>Plástico</li>
+                <li>Video</li>
+                <li>Metal</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
