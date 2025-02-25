@@ -1,0 +1,38 @@
+h1 {
+    font-size: 32px;
+    color: red;
+    background-color: rgb(189, 89, 89);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: orange;
+    background-color: rgb(219, 219, 177);
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: green;
+    background-color: rgb(147, 206, 147);
+    text-align: justify;
+}
+
+#umc{
+    color: palevioletred;
+    background-color: pink;
+
+}
+
+#paragraf1{
+    background-color: lightgray;
+}
+
+#paragraf2{
+    background-color: lightyellow;
+}
+
+#paragraf3{
+    background-color: lightsalmon;
+}
