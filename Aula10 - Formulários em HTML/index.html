@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="">
+        <p> 
+            <label for="text" id="nome">Nome: </label>
+            <input type="text" name="nome" placeholder="Digite aqui seu nome" required>
+        </p>
+
+        <p>
+            <label for="text">Sobrenome: </label>
+            <input type="text" name="Sobrenome" id="Sobrenome" required>
+        </p>
+        
+        
+        <p>   
+            <label for="">Data de nascimento: </label> <br>
+            <input type="date" name="dataNascimento" id="dataNascimento" required>
+        </p> 
+
+        <p>
+            <label for="number">Celular: </label>
+            <input type="number" name="number" id="number" required>
+        </p>
+
+        <p>
+            <label for="CPF">CPF: </label>
+            <input type="text" name="CPF" id="CPF" required>
+        </p>
+
+        <p>
+            <label for="CEP">CEP: </label>
+            <input type="text" name="CEP" id="CEP" required>
+        </p>
+
+        <p>
+            <label for="rua">Rua: </label>
+            <input type="text" name="rua" id="rua" required>
+        </p>
+
+        <p>
+            <label for="bairro"> Bairro: </label>
+            <input type="text" name="bairro" id="bairro">
+        </p>
+
+        <p>
+            <label for="cidade">Cidade: </label>
+            <input type="text" name="cidade" id="cidade">
+        </p>
+
+        <p>
+            <label for="text">E-mail:</label>
+            <input type="email" name="email" id="email" required autocomplete="on">
+        </p>
+
+        <p></p>
+        <p>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required>
+        </p>
+
+        
+    </p>
+    
+    <p>
+        <label for="estado">Estado: </label>
+        <select name="estado" id="estado">
+            <option value="">Selecione..</option>
+                <option value="sp">São Paulo</option> <br>
+                <option value="rj">Rio de Janeiro</option> <br>
+                <option value="mg">Minas Gerais</option> <br>
+                <option value="es">Espírito Santo</option> <br>
+            </select>
+        </p>
+        
+        <p>
+            <label for="Esportes">Esportes Favoritos:</label> <br>
+            <input type="checkbox" name="futebol" id="futebol">Futebol <br>
+            <input type="checkbox" name="volei" id="volei">Vôlei <br>
+            <input type="checkbox" name="basquete" id="basquete">Basquete <br>
+            <input type="checkbox" name="natacao" id="natacao">Natação <br>
+        </p>
+        
+        <p>
+            <label for="">Curso: </label> 
+            <input type="radio" name="curso" id="ADS"> ADS  <br>
+            <input type="radio" name="curso" id="EngSof"> Engenharia de Software <br>
+            <input type="radio" name="curso" id="CinCom"> Ciência da Computação <br>
+            <input type="radio" name="curso" id="SisInf"> Sistema da Informação 
+        </p>
+        
+        <p>
+        <label for="mensagem">Reclamações:</label>
+        <textarea name="mensagem" id="mensagem" cols="50" rows="1" maxlength="100"></textarea>
+        <p>Número máximo de 50 caracteres</p> <br>
+        
+        <p>
+            <div class="buttons">
+                <button type="submit">Enviar</button> <br>
+                <br>
+                <button type="reset">Resetar</button> <br>
+            </div>
+        </p>
+
+
+    </form>
+
+</body>
+</html>
+
