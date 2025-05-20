@@ -83,6 +83,8 @@
                     echo "<div class= 'mensagem erro'> Erro ao cadastrar" .$e->getMessage() ."</div>";
                 }   
                 
+            } else {
+                "<div class= 'mensagem erro'> Erro ao cadastrar";
             }
                     
                     

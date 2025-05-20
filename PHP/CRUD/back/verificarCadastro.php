@@ -11,7 +11,7 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Início</a></li>
-                <li><a href="../cadastro.php">Cadastrar Usuário</a></li>
+                <li><a href="../back/cadastro.php">Cadastrar Usuário</a></li>
                 <li><a href="verificarCadastro.php">Listas Usuários</a></li>
             </ul>
         </nav>
@@ -29,12 +29,12 @@
             <?php
                 
                 //Verificar se o campo e-mail está preenchido
-                if(isset($_POST["e-mail"])){
+                if(isset($_POST["email"])){
                   //Exibir as informações passadas pelo form
                   // echo var_dump($_POST);
                   
                   //Salva a informação de e-mail enviado no form
-                  $email = $_POST["e-mail"];
+                  $email = $_POST["email"];
 
                   //Recebe as informações de conexão com o DB
                   include("../conexao/conexao.php");
@@ -43,31 +43,55 @@
                   $sql = "SELECT * FROM usuarios WHERE email = ? ";
                   //Preparar a conexão junto da consulta
                   $stmt = $conn->prepare($sql);
-                
+                }
 
                 //Validando se a conexão foi feita com sucesso
-                if($stmt){
+                if($_POST){
                     //Troca a informação de e-mail pela ? no $sql
-                    $stmt->bind_param("s" , $email);
+                    $stmt->bind_param("s", $email);
                     //Executa o comando
                     $stmt->execute();
                     //Salva o resultado da consulta
                     $resultado = $stmt->get_result();
                     
-                    if($resultado->num_rows>0){
-                        echo "ELE EXISTE";
+                    if($resultado->num_rows > 0){
                         //Armazenar as informações vindas do DB
-                    }else {
-                        echo "ELE NÃO EXISTE";
-                        echo var_dump($row);
+                        $row = $resultado->fetch_assoc();
+                        
+                        echo "
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Sobrenome</th>
+                                        <th>E-mail</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{$row['ID']}</td>
+                                    <td>{$row['NOME']}</td>
+                                    <td>{$row['SOBRENOME']}</td>
+                                    <td>{$row['EMAIL']}</td>
+                                    <td>
+                                        <form action='excluirCadastro.php' method='post'>
+                                            <input type='hidden' name='id' value={$row['ID']}>
+                                            <input type='submit' id='btn-excluir' value='Excluir'>    
+                                        </form>
+                                    </td>
+                                </tbody>
+                            </table>
 
-                    }
+                        ";
+                    }else {
+                        echo "<div class='mensagem erro'>Erro na consulta</div>";
+                    }    
+
+                    //Encerra a conexao com o Banco de dados
+                    $conn->close();
+                    
                 }
-            
-            
-                }
-            
-            
             
             ?>
 
@@ -75,3 +99,8 @@
     </main>
 </body>
 </html>
+                
+            
+            
+            
+            
