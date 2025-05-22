@@ -14,7 +14,7 @@
         <a href="../CRUD/back/cadastro.php">Cadastro</a>
         <a href="../CRUD/back/verificarCadastro.php">Verificar Cadastro</a>
         <a href="">Atualizar Cadastro</a>
-        <a href="">Verificar Nota</a>
+        <a href="../CRUD/back/verificarNota.php">Verificar Nota</a>
         <a href="">Atualizar Nota</a>
 
     </div>

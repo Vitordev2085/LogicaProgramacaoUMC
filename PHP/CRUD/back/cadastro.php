@@ -74,18 +74,17 @@
                     $stmt->execute();
                     echo "<div class = 'mensagem sucesso'> Usuário cadastrado com sucesso </div>";
                     
-                    //Encerrar a consulta
+                    //Encerrar a consulta SQL e Conexão com o banco de dados
                     $stmt-> close();
                     $conn-> close();
                 }
 
                 catch(mysqli_sql_exception $e){
-                    echo "<div class= 'mensagem erro'> Erro ao cadastrar" .$e->getMessage() ."</div>";
+                    echo "<div class= 'mensagem erro'> Erro ao cadastrar".
+                    $e->getMessage() ."</div>";
                 }   
                 
-            } else {
-                "<div class= 'mensagem erro'> Erro ao cadastrar";
-            }
+            } 
                     
                     
 
