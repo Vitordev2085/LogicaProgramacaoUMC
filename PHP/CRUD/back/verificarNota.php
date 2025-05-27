@@ -1,107 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificar nota</title>
+    <title>Verificar Nota</title>
     <link rel="stylesheet" href="../estilos/styleVerificar.css">
 </head>
 <body>
     <header>
-        <nav>  
+        <nav>
             <ul>
-                <li><a href="../back/.php">Criar cadastro</a></li>
-                <li> <a href="../back/verificarCadastro.php">Verificar cadastro</a></li>
-                <li><a href="../back/verificarNota.php">Verificar notas</a></li>
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="cadastro.php">Cadastrar Usuário</a></li>
+                <li><a href="">Listas Usuários</a></li>
             </ul>
-        </nav>   
-    </header>     
-               
+        </nav>
+    </header>
+
     <main>
         <section id="containerSection">
             <form action="verificarNota.php" method="post">
                 <select name="curso" id="curso" class="estilo">
                     <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                    <option value="engenharia_software">Engenharia de Sofware</option>
-                    <option value="sistemas_informacao">Sistema de Informação</option>
+                    <option value="engenharia_software">Engenharia de Software</option>
+                    <option value="sistemas_informacao">Sistema da Informação</option>
                     <option value="ciencias_computacao">Ciências da Computação</option>
-                </select> 
+                </select>
                 <input type="submit" value="Buscar">
             </form>
         </section>
         <section>
+            
+            <?php 
 
-            <?php
-                
-                // Verificar se o $POST['CURSO'] está 
+                //Verificar se o $POST['CURSO'] está vazio
                 if (isset($_POST["curso"])) {
-                    
-                    
+
                     //Chamar a conexão com o DB
                     include("../conexao/conexao.php");
-                    
+
                     //Salvar a informação do curso selecionado
                     $curso = $_POST["curso"];
-                    
+
                     //Consulta SQL
                     $sql = "SELECT * FROM usuarios WHERE curso = ?";
                     
-                    //Verificar se a conexão foi bem-sucedida
+                    //Preparar a consulta SQL junto da conexão
                     $stmt = $conn->prepare($sql);
-                    
+
+                    //Verificar se a conexão foi bem-sucedida
                     if ($stmt) {
-                        $stmt->bind_param("s", $curso);
+                        $stmt->bind_param("s" , $curso);
                         $stmt->execute();
                         $resultado = $stmt->get_result();
                         
-                        if($resultado->num_rows > 0) {
-                            echo"
+                        if ($resultado->num_rows > 0) {
+                            echo "
                                 <table>
-                                <thead>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>Nome</td>
-                                        <td>Sobrenome</td>
-                                        <td>Nota Atividade</td>
-                                        <td>Nota Prova</td>
-                                        <td>Nota Final</td>
-                                    </tr>
-                                </thead>
-                                <tbody> ";
-                                    while($row->fetch_assoc()){
-                                    echo "
+                                    <thead>
                                         <tr>
-                                            <td>{$row['ID']}</td>
-                                            <td>{$row['NOME']}</td>
-                                            <td>{$row['SOBRENOME']}</td>
-                                            <td>{$row['nota_atividade']}</td>
-                                            <td>{$row['nota_final']}</td>
-                                        </tr>";
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Sobrenome</th>
+                                            <th>Nota Atividade</th>
+                                            <th>Nota Prova</th>
+                                            <th>Nota Final</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody> ";
+                                        while($row = $resultado->fetch_assoc()){
+                                        echo "
+                                            <tr>
+                                                <td>{$row['ID']}</td>
+                                                <td>{$row['NOME']}</td>
+                                                <td>{$row['SOBRENOME']}</td>
+                                                <td>{$row['NOTA_ATIVIDADE']}</td>
+                                                <td>{$row['NOTA_PROVA']}</td>
+                                                <td>{$row['NOTA_FINAL']}</td>
+                                            </tr> ";
                                         }
-
-                            echo"            
-                                </tbody>            
-                            </table>
+                            echo "
+                                    </tbody>
+                                </table>  
                             ";
-
-                            $stmt->close();
+                        } else {
+                            echo "<div class = 'mensagem erro'>Esse $curso não possui registros de usuários</div>";
                         }
 
-                        $conn->close();    
+                        $stmt->close();
                     }
-                    
+
+                    $conn->close();
                 }
-            
-            
+
+
             ?>
+
         </section>
     </main>
-        
+    
     
 </body>
-</html        
-                
-
-    
-
-    
+</html>
