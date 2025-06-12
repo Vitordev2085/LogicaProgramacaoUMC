@@ -1,0 +1,53 @@
+#destinos {
+    color: rgb(44, 62, 80);
+    background-color: rgb(236, 240, 241);
+}
+
+#marnaturais {
+    color: rgb(39, 174, 96);
+    background-color: rgb(233, 247, 239);
+}
+
+#cidvibrantes {
+    color: rgb(243, 156, 18);
+    background-color: rgb(255, 243, 230) ;
+}
+
+#cultexperiencias {
+    color: rgb(142, 68, 173);
+    background-color: rgb(245, 230, 245);
+
+}
+
+.cidades {
+    color: rgb(231, 76, 60);
+    background-color: rgb(249, 235, 234);
+    letter-spacing: 0.3em;
+    text-decoration: underline;
+}
+
+.natural{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: 200;
+    color: rgb(39, 174, 96);
+    background-color: rgb(233, 247, 239);
+    letter-spacing: 0.3em;
+    line-height: 30px;
+    text-decoration: underline;
+    text-align: justify;
+}
+
+.brilho{
+    color: rgb(243, 156, 18);
+    background-color: rgb(255, 243, 230);
+    letter-spacing: 0.3em;
+    text-decoration: underline;
+}
+
+.rel{
+    color: rgb(142, 68, 173);
+    background-color: rgb(245, 230, 245);
+    letter-spacing: 0.3em;
+    text-decoration: underline;
+}

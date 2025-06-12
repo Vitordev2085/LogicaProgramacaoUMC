@@ -1,0 +1,43 @@
+#destinos {
+    background-color: blue;
+    color: aquamarine;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#maravilhas {
+    background-color: greenyellow;
+    color: goldenrod;   
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#cidades {
+    background-color:blueviolet;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+#experiencias {
+    background-color: aqua;
+    color: brown ;  
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.lugares {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(66, 209, 30);
+}
+
+.turismo {
+    font-size: 1.3em;
+    line-height: 30px;
+    color: tomato;    
+}
