@@ -1,11 +1,20 @@
     table{
         width: 60vw;
+        height: 50vw;
         border-collapse: collapse;
+        padding: 4px;
     }    
 
-    th, td{
+    th, tr{
         border: 1px solid black;
         text-align: center;
         padding: 5px;
     }
     
+    td{
+        border: 2px solid blue;
+        text-align: justify;
+        padding: 5px;
+        border-collapse: separate;
+        border-spacing: 2px;
+    }
