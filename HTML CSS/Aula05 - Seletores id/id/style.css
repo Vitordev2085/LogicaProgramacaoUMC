@@ -1,13 +1,7 @@
 h1 {
-    font-size: 32px;
-    color: red;
-    background-color: rgb(189, 89, 89);
-    text-align: center;
-}
-
-h2 {
     font-size: 24px;
-    color: orange;
+    color: rgb(213, 19, 19);
+    text-align: center;
     background-color: rgb(219, 219, 177);
     text-align: center;
 }
@@ -15,24 +9,49 @@ h2 {
 p {
     font-size: 16px;
     color: green;
-    background-color: rgb(147, 206, 147);
     text-align: justify;
 }
 
 #umc{
     color: palevioletred;
     background-color: pink;
-
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
 }
 
 #paragraf1{
-    background-color: lightgray;
+    color: rgb(27, 173, 206);
+    font-size: 19;
+    font-style: italic;
 }
 
 #paragraf2{
-    background-color: lightyellow;
+    color: rgb(89, 205, 87);
+    font-size: 19px;
+    font-style: italic;
 }
 
 #paragraf3{
-    background-color: lightsalmon;
+    color:rgb(255, 14, 14);
+    font-size: 19px;
+    font-style: italic;
+}
+
+#text1{
+    font-size: 16px;
+    color: rgb(248, 37, 255);
+    text-align: justify;
+}
+
+#text2{
+    font-size: 16px;
+    color: rgb(53, 176, 34);
+    text-align: justify;
+}
+
+#text3{
+    font-size: 16px;
+    color: rgb(255, 174, 25);
+    text-align: justify;
 }
